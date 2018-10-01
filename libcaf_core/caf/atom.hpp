@@ -23,6 +23,7 @@
 #include <type_traits>
 
 #include "caf/detail/atom_val.hpp"
+#include "caf/string_view.hpp"
 
 namespace caf {
 
@@ -36,7 +37,7 @@ enum class atom_value : uint64_t {
 /// @relates atom_value
 std::string to_string(const atom_value& what);
 
-atom_value atom_from_string(const std::string& x);
+atom_value atom_from_string(string_view x);
 
 /// Creates an atom from given string literal.
 template <size_t Size>

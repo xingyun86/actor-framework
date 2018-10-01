@@ -22,11 +22,11 @@
 
 namespace caf {
 
-atom_value atom_from_string(const std::string& x) {
+atom_value atom_from_string(string_view x) {
   if (x.size() > 10)
     return atom("");
   char buf[11];
-  memcpy(buf, x.c_str(), x.size());
+  memcpy(buf, x.data(), x.size());
   buf[x.size()] = '\0';
   return atom(buf);
 }
